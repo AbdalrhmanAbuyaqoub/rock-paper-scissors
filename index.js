@@ -1,6 +1,11 @@
 const rock = "ROCK";
 const paper = "PAPER";
 const scissors = "SCISSORS";
+const computerWon = "!!!YOU LOST!!!";
+const humanWon = "!!!YOU WON!!!";
+
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
   let r = Math.random();
@@ -17,13 +22,7 @@ function getHumanChoice() {
   return prompt("Enter Your Choice: ");
 }
 
-let humanScore = 0;
-let computerScore = 0;
-
 function playRound(humanChoice, computerChoice) {
-  const computerWon = "!!!YOU LOST!!!";
-  const humanWon = "!!!YOU WON!!!";
-
   // rock > scissors
   // scissors > paper
   // paper > rock
@@ -42,11 +41,29 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-const humanSelection = getHumanChoice().toUpperCase();
-const computerSelection = getComputerChoice();
+function playGame() {
+  let roundResults;
 
-console.log(humanSelection);
-console.log(computerSelection);
+  for (let i = 1; i <= 5; i++) {
+    roundResults = playRound(
+      getHumanChoice().toUpperCase(),
+      getComputerChoice()
+    );
 
-let results = playRound(humanSelection, computerSelection);
-console.log(results);
+    console.log(roundResults);
+
+    if (roundResults === computerWon) {
+      computerScore++;
+    } else if (roundResults === humanWon) {
+      humanScore++;
+    }
+    console.log("your score:" + humanScore);
+    console.log("computer score:" + computerScore);
+  }
+
+  if (computerScore === humanScore) {
+    console.log("!!! TIE !!!");
+  } else if (computerScore > humanScore) {
+    console.log("!!! GAME OVER !!!");
+  } else console.log("!!! YOU ARE THE WINNER !!!");
+}
