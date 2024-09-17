@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(47, 46, 55);
+  font-family: sans-serif;
+}
+
+.container {
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  border-radius: 10px;
+}
+
+.result {
+  width: 260px;
+  height: 100px;
+  background-color: rgb(217, 217, 217);
+  border-radius: 10px;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+button {
+  background-color: rgb(70, 159, 116);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  color: rgb(228, 228, 228);
+  width: 7rem;
+  height: 3.3rem;
+}
+
+button:active {
+  background-color: rgb(62, 146, 105);
+}
+
+.score-box {
+  height: 60px;
+  /* width: 70%; */
+  margin-bottom: 60px;
+  font-size: 30px;
+  text-align: center;
+  color: rgb(228, 228, 228);
+  border-radius: 10px;
+  border: 2px solid rgb(228, 228, 228);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.score {
+  margin-left: 8px;
+  margin-top: 4px;
+  color: red;
+  font-weight: 500;
+}
+.score-container {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
